@@ -140,7 +140,7 @@ def plot_output_data(data):
 
 if __name__ == '__main__':
     # Read in data
-    data_path='E:/ADSS/FinalProject504J/Data/msc_20200115_metdata.nc'
+    data_path='msc_20200115_metdata.nc'
     raw_dataset = Dataset(data_path)
     temperature = raw_dataset["specific_humidity_0"][:560,:416,0,0].reshape(560, 416, 1, 1).transpose(3, 0, 1, 2)
     
