@@ -14,10 +14,10 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 from utils import generate_LR, turn2origin_shape, get_Tpqh, refractivity, denormalise
 
 class Validator():
-    def __init__(self, SR_file_dir='E:/ADSS/FinalProject504J/SR_sample'):
+    def __init__(self, SR_file_dir='./SR_sample'):
         self.SR_file_dir = SR_file_dir
 
-    def read_raw_data_slice(self, file='E:/ADSS/FinalProject504J/Data/msc_20200115_metdata.nc', height_index=70):
+    def read_raw_data_slice(self, file='msc_20200115_metdata.nc', height_index=70):
         #read raw HR data and return HR data in training shape
         atmos_data = Dataset(file)
         if height_index <= 70:
@@ -222,7 +222,7 @@ class AverageM():
     '''
     Define a class to plot average refractivity of all points for all types of data against height level
     '''
-    def __init__(self, file="E:/ADSS/FinalProject504J/Data/m_for_height.csv"):
+    def __init__(self, file="m_for_height.csv"):
         self.file = file # where average m is calculated by functions in Validator
         self.plot_m_temperature = self.plot_m_temperature()
         self.plot_m_pressure = self.plot_m_pressure()
