@@ -209,7 +209,7 @@ def plot_map(data, height_index=0, timestep=0):
     timestep : TYPE, optional. The default is 0.
     '''
     data = data[:,:,height_index, timestep]
-    atmos = Dataset('E:/ADSS/FinalProject504J/Data/msc_20200115_metdata.nc')
+    atmos = Dataset('msc_20200115_metdata.nc')
     longitudes = atmos["longitude"][:560]
     latitudes = atmos["latitude"][:416]
     plt.figure(figsize=(10, 8))
@@ -356,7 +356,7 @@ def get_Tpqh(temperature, pressure, humidity, height_index=0, timestep_index=0):
         height
     '''
     if temperature.ndim == 4 and height_index < temperature.shape[2] and timestep_index < temperature.shape[3]:
-        atmos = Dataset('E:/ADSS/FinalProject504J/Data/msc_20200115_metdata.nc')
+        atmos = Dataset('msc_20200115_metdata.nc')
         heights = atmos["level_height"][:]
         del atmos
         gc.collect()
