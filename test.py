@@ -19,7 +19,7 @@ if __name__ == '__main__':
     checkpoint = tf.train.Checkpoint(generator=generator,
                                      discriminator=discriminator)
     
-    checkpoint.restore(tf.train.latest_checkpoint('./training_checkpoints')).expect_partial()
+    checkpoint.restore(tf.train.latest_checkpoint('./trained_models/temperature/training_checkpoints')).expect_partial()
 
     #original test data, better different from training data
     atmos_data = Dataset('msc_20200115_metdata.nc')
